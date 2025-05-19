@@ -1,0 +1,11 @@
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/xor.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/subtract.v
+1747549269 /home/admin/shared/sharedvirtuoso/alu/01_tb/testbench.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/adder.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/full_adder.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/synth_wrapper.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/or.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/and.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/not.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/lsr.v
+1747372721 /home/admin/shared/sharedvirtuoso/alu/00_src/lsl.v

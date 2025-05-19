@@ -1,0 +1,15 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+/home/admin/shared/sharedvirtuoso/alu/00_src/full_adder.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/and.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/lsl.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/lsr.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/not.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/or.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/subtract.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/adder.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/synth_wrapper.v
+/home/admin/shared/sharedvirtuoso/alu/00_src/xor.v
+/home/admin/shared/sharedvirtuoso/alu/01_tb/testbench.v

@@ -1,0 +1,99 @@
+xrun(64): 20.09-s001: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+xrun: *W,FMDEF: The default file type mapping of .sv is being overwritten.
+TOOL:	xrun(64)	20.09-s001: Started on May 18, 2025 at 03:07:57 EDT
+xrun
+	-gui
+	+xm64bit
+	-sv
+	-vlogext .sv
+	-f 00_src/flist.f
+		00_src/full_adder.v
+		00_src/and.v
+		00_src/lsl.v
+		00_src/lsr.v
+		00_src/not.v
+		00_src/or.v
+		00_src/subtract.v
+		00_src/adder.v
+		00_src/synth_wrapper.v
+		00_src/xor.v
+	01_tb/testbench.v
+	-timescale 1ns/10ps
+	+access+rcw
+Recompiling... reason: file './01_tb/testbench.v' is newer than expected.
+	expected: Sun May 18 02:20:07 2025
+	actual:   Sun May 18 02:21:09 2025
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_synth_wrapper
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                 19      11
+		Registers:               18      18
+		Scalar wires:            23       -
+		Expanded wires:          12       3
+		Vectored wires:           8       -
+		Always blocks:            3       3
+		Initial blocks:           4       4
+		Cont. assignments:        5      10
+		Pseudo assignments:       7       7
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.tb_synth_wrapper:v
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /opt/cadence/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_synth_wrapper.expected_result tb_synth_wrapper.a tb_synth_wrapper.b tb_synth_wrapper.carry tb_synth_wrapper.clk tb_synth_wrapper.expected_carry tb_synth_wrapper.op tb_synth_wrapper.result tb_synth_wrapper.rst_n tb_synth_wrapper.testcase_count
+Created probe 1
+xcelium> run
+xmsim: *W,SHMOFU: $shm_open - file waves.shm already in use (SHM database).
+            File: ./01_tb/testbench.v, line = 28, pos = 16
+           Scope: tb_synth_wrapper
+            Time: 0 FS + 0
+
+xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
+            File: ./01_tb/testbench.v, line = 29, pos = 17
+           Scope: tb_synth_wrapper
+            Time: 0 FS + 0
+
+[PASS] Testcase 1: Reset (rst_n = 0)
+  Result = 0000, Carry = 0 (Expected: 0000, 0)
+[PASS] Testcase 2: Add (a = 7, b = 8)
+  Result = 1111, Carry = 0 (Expected: 1111, 0)
+[PASS] Testcase 3: Add with overflow (a = 9, b = 8)
+  Result = 0001, Carry = 1 (Expected: 0001, 1)
+[PASS] Testcase 4: Subtract (a = 12, b = 5)
+  Result = 0111, Carry = 1 (Expected: 0111, 1)
+[PASS] Testcase 5: tract with borrow (a = 1, b = 6)
+  Result = 1011, Carry = 0 (Expected: 1011, 0)
+[PASS] Testcase 6: AND (a = 1101, b = 0111)
+  Result = 0101, Carry = 0 (Expected: 0101, 0)
+[PASS] Testcase 7: OR (a = 0101, b = 0011)
+  Result = 0111, Carry = 0 (Expected: 0111, 0)
+[PASS] Testcase 8: XOR (a = 1111, b = 1010)
+  Result = 0101, Carry = 0 (Expected: 0101, 0)
+[PASS] Testcase 9: NOT (a = 0001)
+  Result = 1110, Carry = 0 (Expected: 1110, 0)
+[PASS] Testcase 10: Shift Left (a = 0011, b = 1)
+  Result = 0110, Carry = 0 (Expected: 0110, 0)
+[PASS] Testcase 11: Shift Left (a = 0001, b = 3)
+  Result = 1000, Carry = 0 (Expected: 1000, 0)
+[PASS] Testcase 12: Shift Right (a = 1110, b = 1)
+  Result = 0111, Carry = 0 (Expected: 0111, 0)
+[PASS] Testcase 13: Shift Right (a = 1000, b = 3)
+  Result = 0001, Carry = 0 (Expected: 0001, 0)
+[PASS] Testcase 14: Subtract (a = 8, b = 8)
+  Result = 0000, Carry = 1 (Expected: 0000, 1)
+Simulation completed. Total testcases: 14
+Simulation complete via $finish(1) at time 160 NS + 0
+./01_tb/testbench.v:167         $finish;
+xcelium> TOOL:	xrun(64)	20.09-s001: Exiting on May 18, 2025 at 03:09:15 EDT  (total: 00:01:18)
