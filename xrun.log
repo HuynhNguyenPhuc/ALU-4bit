@@ -1,8 +1,7 @@
 xrun(64): 20.09-s001: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
 xrun: *W,FMDEF: The default file type mapping of .sv is being overwritten.
-TOOL:	xrun(64)	20.09-s001: Started on May 18, 2025 at 03:07:57 EDT
+TOOL:	xrun(64)	20.09-s001: Started on May 19, 2025 at 01:48:05 EDT
 xrun
-	-gui
 	+xm64bit
 	-sv
 	-vlogext .sv
@@ -20,15 +19,68 @@ xrun
 	01_tb/testbench.v
 	-timescale 1ns/10ps
 	+access+rcw
-Recompiling... reason: file './01_tb/testbench.v' is newer than expected.
-	expected: Sun May 18 02:20:07 2025
-	actual:   Sun May 18 02:21:09 2025
+file: 00_src/full_adder.v
+	module worklib.full_adder:v
+		errors: 0, warnings: 0
+file: 00_src/and.v
+	module worklib.and_gate:v
+		errors: 0, warnings: 0
+file: 00_src/lsl.v
+	module worklib.lsl:v
+		errors: 0, warnings: 0
+file: 00_src/lsr.v
+	module worklib.lsr:v
+		errors: 0, warnings: 0
+file: 00_src/not.v
+	module worklib.not_gate:v
+		errors: 0, warnings: 0
+file: 00_src/or.v
+	module worklib.or_gate:v
+		errors: 0, warnings: 0
+file: 00_src/subtract.v
+	module worklib.subtract:v
+		errors: 0, warnings: 0
+file: 00_src/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: 00_src/synth_wrapper.v
+	module worklib.synth_wrapper:v
+		errors: 0, warnings: 0
+file: 00_src/xor.v
+	module worklib.xor_gate:v
+		errors: 0, warnings: 0
+file: 01_tb/testbench.v
+	module worklib.tb_synth_wrapper:v
+		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
 		tb_synth_wrapper
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.lsr:v <0x6d7501cf>
+			streams:   1, words:   673
+		worklib.lsl:v <0x3949f248>
+			streams:   1, words:   614
+		worklib.not_gate:v <0x1e457d39>
+			streams:   1, words:   224
+		worklib.xor_gate:v <0x2cfeb8d8>
+			streams:   1, words:   297
+		worklib.or_gate:v <0x293bffd4>
+			streams:   2, words:   664
+		worklib.and_gate:v <0x1c1860de>
+			streams:   2, words:   643
+		worklib.subtract:v <0x05723942>
+			streams:   1, words:   302
+		worklib.full_adder:v <0x7e3e3836>
+			streams:   0, words:     0
+		worklib.synth_wrapper:v <0x3cb88ec1>
+			streams:  13, words:  5553
+		worklib.tb_synth_wrapper:v <0x4b6d1cd1>
+			streams:  10, words: 28444
+		worklib.adder:v <0x287d5d20>
+			streams:   0, words:     0
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -44,27 +96,10 @@ xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-
 		Pseudo assignments:       7       7
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.tb_synth_wrapper:v
+Loading snapshot worklib.tb_synth_wrapper:v .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-
--------------------------------------
-Relinquished control to SimVision...
-xcelium> 
 xcelium> source /opt/cadence/XCELIUM2009/tools/xcelium/files/xmsimrc
-xcelium> database -open waves -into waves.shm -default
-Created default SHM database waves
-xcelium> probe -create -shm tb_synth_wrapper.expected_result tb_synth_wrapper.a tb_synth_wrapper.b tb_synth_wrapper.carry tb_synth_wrapper.clk tb_synth_wrapper.expected_carry tb_synth_wrapper.op tb_synth_wrapper.result tb_synth_wrapper.rst_n tb_synth_wrapper.testcase_count
-Created probe 1
 xcelium> run
-xmsim: *W,SHMOFU: $shm_open - file waves.shm already in use (SHM database).
-            File: ./01_tb/testbench.v, line = 28, pos = 16
-           Scope: tb_synth_wrapper
-            Time: 0 FS + 0
-
-xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
-            File: ./01_tb/testbench.v, line = 29, pos = 17
-           Scope: tb_synth_wrapper
-            Time: 0 FS + 0
-
 [PASS] Testcase 1: Reset (rst_n = 0)
   Result = 0000, Carry = 0 (Expected: 0000, 0)
 [PASS] Testcase 2: Add (a = 7, b = 8)
@@ -96,4 +131,5 @@ xmsim: *W,SHMNOSO: $shm_probe - SHM file not opened with $shm_open.
 Simulation completed. Total testcases: 14
 Simulation complete via $finish(1) at time 160 NS + 0
 ./01_tb/testbench.v:167         $finish;
-xcelium> TOOL:	xrun(64)	20.09-s001: Exiting on May 18, 2025 at 03:09:15 EDT  (total: 00:01:18)
+xcelium> exit
+TOOL:	xrun(64)	20.09-s001: Exiting on May 19, 2025 at 01:48:07 EDT  (total: 00:00:02)

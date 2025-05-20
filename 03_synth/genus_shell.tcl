@@ -22,7 +22,7 @@ write_hdl > 03_synth/${top_module}_elab.v
 check_design -all
 ##################################################
 #Timing constraint variables#
-set FREQ_GHz 0.8
+set FREQ_GHz 0.75
 set FREQ [ expr ${FREQ_GHz} * 1000000000.0 ]
 set PERIOD_tmp [ expr (1.0/${FREQ}) ]
 set PERIOD [ expr ${PERIOD_tmp} * 1000000000000.0 ]
